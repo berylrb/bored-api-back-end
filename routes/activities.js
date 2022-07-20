@@ -42,10 +42,10 @@ router.get('/api/activity/', (req, res) => {
   }).catch(err => {
     if (err.name === 'CastError') {
 
-      res.error('Failed to query due to error in arguments');
+      res.json({err:'Failed to query due to error in arguments'});
     }
     else {
-      res.error(err.message || 'There was an error querying for activity');
+      res.json(err.message ? {err:err.message} :{err:'There was an error querying for activity'});
     }
   });
 });
