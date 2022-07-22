@@ -16,7 +16,7 @@ const activitySchema = new mongoose.Schema({
 		required: true
 	},
 	price: { // 0.0 - 1.0
-		type: Number,
+		type: String,
 		required: true
 	},
 	availability: { // 0.0 - 1.0
